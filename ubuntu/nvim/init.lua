@@ -1,0 +1,2 @@
+require("notoh")
+print("Hello")
