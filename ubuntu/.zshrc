@@ -20,6 +20,7 @@ fi
 # Paths
 export CHROME_EXECUTABLE="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
 export PATH="/home/notoh/Documents/apache-maven-3.9.9/bin:$PATH"
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 alias code="/mnt/c/Users/nobuh/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
 
 # Customize to your needs...
@@ -44,7 +45,7 @@ autoload -U compinit && compinit
 # Keybindings
 bindkey -e
 bindkey '^p' history-search-backward
-bindkey '^n' hisotry-search-forward
+bindkey '^n' history-search-forward
 
 # History
 HISTSIZE=5000
@@ -65,6 +66,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} = # colorz !
 
 # Color
 alias ls='ls --color'
