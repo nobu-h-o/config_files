@@ -71,6 +71,9 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} = # colorz !
 # Color
 alias ls='ls --color'
 
+# Shortcuts
+alias vim="nvim"
+alias vi="nvim"
 # Shell integrations
 eval "$(fzf --zsh)"
 
