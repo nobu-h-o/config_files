@@ -5,11 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
-
 # Paths
 export CHROME_EXECUTABLE="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
 export PATH="/home/notoh/Documents/apache-maven-3.9.9/bin:$PATH"
@@ -65,6 +60,7 @@ alias ls='ls --color'
 
 # Shortcuts
 # Terminal
+alias c="cd"
 alias cb="cd .."
 alias cl="clear"
 alias ex="exit"
@@ -78,7 +74,10 @@ alias vi="nvim"
 alias v="nvim"
 alias v.="nvim ."
 # Git
+alias g="git"
 alias gi="git init"
+alias gr="git remote add origin"
+alias grs="git remote set-url origin"
 alias ga="git add"
 alias ga.="git add ."
 alias gc="git commit -m"
