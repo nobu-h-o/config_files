@@ -76,20 +76,26 @@ alias mt="make test"
 alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
+alias v.="nvim ."
 # Git
 alias gi="git init"
 alias ga="git add"
+alias ga.="git add ."
 alias gc="git commit -m"
 alias gcl="git clone"
 alias gb="git branch"
 alias gbm="git branch -m"
 alias gs="git status"
 alias gsw="git switch"
+alias gst="git stash"
+alias gpop="git stash pop"
 alias gp="git push"
 alias gl="git pull"
 # zshrc
 alias vz="nvim ~/.zshrc"
 alias sz="source ~/.zshrc"
+# XClip Copy
+alias copy="xclip -sel c < "
 # Shell integrations
 eval "$(fzf --zsh)"
 
