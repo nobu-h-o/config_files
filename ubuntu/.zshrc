@@ -64,6 +64,8 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} = # colorz !
 alias ls='ls --color'
 
 # Shortcuts
+# Terminal
+alias cb="cd .."
 # Vim
 alias vim="nvim"
 alias vi="nvim"
@@ -72,11 +74,13 @@ alias v="nvim"
 alias gi="git init"
 alias ga="git add"
 alias gc="git commit -m"
+alias gcl="git clone"
 alias gb="git branch"
 alias gbm="git branch -m"
 alias gs="git status"
 alias gsw="git switch"
 alias gp="git push"
+alias gl="git pull"
 # zshrc
 alias vz="nvim ~/.zshrc"
 alias sz="source ~/.zshrc"
