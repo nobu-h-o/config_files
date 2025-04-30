@@ -66,6 +66,12 @@ alias ls='ls --color'
 # Shortcuts
 # Terminal
 alias cb="cd .."
+alias cl="clear"
+alias ex="exit"
+# Make
+alias mk="make"
+alias mc="make clean"
+alias mt="make test"
 # Vim
 alias vim="nvim"
 alias vi="nvim"
