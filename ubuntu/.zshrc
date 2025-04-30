@@ -5,13 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -23,7 +16,6 @@ export PATH="/home/notoh/Documents/apache-maven-3.9.9/bin:$PATH"
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 alias code="/mnt/c/Users/nobuh/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
 
-# Customize to your needs...
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
@@ -72,8 +64,22 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} = # colorz !
 alias ls='ls --color'
 
 # Shortcuts
+# Vim
 alias vim="nvim"
 alias vi="nvim"
+alias v="nvim"
+# Git
+alias gi="git init"
+alias ga="git add"
+alias gc="git commit -m"
+alias gb="git branch"
+alias gbm="git branch -m"
+alias gs="git status"
+alias gsw="git switch"
+alias gp="git push"
+# zshrc
+alias vz="nvim ~/.zshrc"
+alias sz="source ~/.zshrc"
 # Shell integrations
 eval "$(fzf --zsh)"
 
