@@ -14,7 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup(
     {
         { import = "notoh.plugins" },
-        { import = "notoh.plugins.lsp" },
     },
     {
         checker = {
