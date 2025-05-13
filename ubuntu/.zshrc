@@ -1,3 +1,6 @@
+typeset -U path
+
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -9,12 +12,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Paths
-export CHROME_EXECUTABLE="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
-export PATH="/home/notoh/Documents/apache-maven-3.9.9/bin:$PATH"
+#Paths
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-alias code="/mnt/c/Users/nobuh/AppData/Local/Programs/Microsoft\ VS\ Code/bin/code"
-
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
@@ -68,6 +67,8 @@ alias c="cd"
 alias cb="cd .."
 alias cl="clear"
 alias ex="exit"
+alias pls="sudo"
+alias cdp="cd ~/Projects"
 # Make
 alias mk="make"
 alias mc="make clean"
@@ -77,6 +78,7 @@ alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
 alias v.="nvim ."
+alias cn="cd ~/.config/nvim"
 # Git
 alias g="git"
 alias gi="git init"
@@ -97,19 +99,18 @@ alias gl="git pull"
 # zshrc
 alias vz="nvim ~/.zshrc"
 alias sz="source ~/.zshrc"
+# Competitive Programming
+alias ca="cd ~/Projects/CP-Library/"
+alias va="nvim a.cpp"
 # XClip Copy
 alias copy="xclip -sel c < "
 # Shell integrations
 eval "$(fzf --zsh)"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-# Created by `pipx` on 2025-03-01 17:16:48
-export PATH="$PATH:/home/notoh/.local/bin"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
