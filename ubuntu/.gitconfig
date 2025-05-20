@@ -1,0 +1,9 @@
+[user]
+	email = nobuhirooto@gmail.com
+	name = Nobuhiro Oto
+[init]
+	defaultBranch = main
+[core]
+	editor = vim
+[push]
+	default = current
