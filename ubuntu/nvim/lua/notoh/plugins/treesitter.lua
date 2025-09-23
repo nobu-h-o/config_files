@@ -21,6 +21,7 @@ return {
                     "javascript",
                     "typescript",
                     "tsx",
+                    "kotlin",
                     "go",
                     "yaml",
                     "html",

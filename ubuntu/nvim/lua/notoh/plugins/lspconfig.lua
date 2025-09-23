@@ -184,8 +184,25 @@ return {
       --  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
       local capabilities = require('blink.cmp').get_lsp_capabilities()
 
+      local util = require('lspconfig.util')
+
       local servers = {
         clangd = {},
+        -- Kotlin LSP via Mason's kotlin-language-server
+        kotlin_language_server = (function()
+          local mason_bin = vim.fn.stdpath('data') .. '/mason/bin/kotlin-language-server'
+          local cmd = (vim.fn.executable(mason_bin) == 1) and { mason_bin } or { 'kotlin-language-server' }
+          return {
+            cmd = cmd,
+            root_dir = function(fname)
+              return util.root_pattern(
+                'settings.gradle', 'settings.gradle.kts',
+                'build.gradle', 'build.gradle.kts',
+                'pom.xml', '.git'
+              )(fname) or util.path.dirname(fname)
+            end,
+          }
+        end)(),
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
@@ -230,6 +247,8 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'ktlint', -- Kotlin formatter
+        'kotlin-language-server', -- Ensure Kotlin LSP is installed via Mason
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
